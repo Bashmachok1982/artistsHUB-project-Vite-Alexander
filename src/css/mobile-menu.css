@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px 8px 20px; /* сверху/снизу 8px, справа 12px, слева 20px */
+  padding: 8px 12px 8px 20px;
   height: 64px;
   flex-shrink: 0;
 }
@@ -60,11 +60,11 @@
 }
 
 .mobile-nav {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px; /* 40px от хедера вниз */
+  margin-top: 40px;
+  text-align: center;
 }
 
 .mobile-nav-list {
