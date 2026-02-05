@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
-    base: '/artistsHUB-team-project/',
+    base: '/artistsHUB-project-Vite-Alexander/',
     root: 'src',
     build: {
       sourcemap: true,
