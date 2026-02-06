@@ -1,0 +1,198 @@
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  position: relative;
+  background: #23132b; /* базовый фон */
+  margin-top: 72px; /* ← КЛЮЧЕВОЕ! высота твоего хедера (подставь реальную, чтобы градиент начинался от верха страницы) */
+  /* или margin-top: 80px; если не хочешь внутренний отступ */
+}
+
+/* Верхний градиент — начинается от самого верха hero (теперь видим под хедером) */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* твоя высота луча */
+  background: linear-gradient(to bottom, #060307 0%, rgba(35, 19, 43, 0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Нижний градиент */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 137px;
+  background: linear-gradient(to top, #060307 0%, rgba(35, 19, 43, 0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* =========================
+   HERO WRAP
+========================= */
+.hero-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 64px 0;
+  position: relative;
+  z-index: 2; /* контент поверх градиентов */
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+.hero-content {
+  max-width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 24px;
+  background: none;
+}
+
+.hero-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+/* =========================
+   HERO BUTTON
+========================= */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 288px;
+  height: 47px;
+  padding: 10px 24px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: none;
+
+  background: #764191;
+  border-radius: 12px;
+
+  box-shadow:
+    0 1px 2px rgba(6, 3, 7, 0.05),
+    inset 0 -2px 1px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+    inset 0 2px 1px rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-btn-icon {
+  fill: #fff;
+}
+
+/* =========================
+   HERO IMAGE — MOBILE
+========================= */
+.hero-image {
+  width: 280px;
+  height: 385px;
+
+  background-image: url('../img/hero/mobile/hero-mobile-1x.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  /*border-radius: 24px;*/
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-resolution: 2dppx) {
+  .hero-image {
+    background-image: url('../img/hero/mobile/hero-mobile-2x.webp');
+  }
+}
+
+/* =========================
+   TABLET ≥ 768px
+========================= */
+@media (min-width: 768px) {
+  .hero-wrap {
+    align-items: center;
+    padding: 64px 0;
+  }
+
+  .hero-image {
+    width: 704px;
+    height: 632px;
+
+    background-image: url('../img/hero/tablet/hero-tablet-1x.webp');
+  }
+
+  @media (min-resolution: 2dppx) {
+    .hero-image {
+      background-image: url('../img/hero/tablet/hero-tablet-2x.webp');
+    }
+  }
+}
+
+/* =========================
+   DESKTOP ≥ 1440px
+========================= */
+@media (min-width: 1440px) {
+  .hero-wrap {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    min-height: 100%;
+    padding: 0;
+  }
+
+  .hero-content {
+    width: 640px;
+  }
+
+  .hero-title {
+    font-size: 84px;
+  }
+
+  .hero-text {
+    font-size: 20px;
+  }
+
+  .hero-btn {
+    width: 206px;
+  }
+
+  .hero-image {
+    width: 640px;
+    min-height: 900px;
+
+    background-image: url('../img/hero/desktop/hero-desktop-1x.webp');
+  }
+
+  @media (min-resolution: 2dppx) {
+    .hero-image {
+      background-image: url('../img/hero/desktop/hero-desktop-2x.webp');
+    }
+  }
+}
